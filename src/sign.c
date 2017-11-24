@@ -108,6 +108,10 @@ sign(unsigned char *h, int64 *z, const int64 *key,
 
     CLEAR(c.val);
     formatc(&c, h);
+		int i;
+		for(i = 0; i < PASS_b; i++)
+			fprintf(stderr,"%u ",c.ind[i]);
+		fprintf(stderr,"\n");
 
     /* z = y += f*c */
     bsparseconv(y, key, &c);
